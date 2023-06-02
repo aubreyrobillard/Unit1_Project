@@ -4,7 +4,7 @@ body {
     height: 100vh;
 
     /* Background Image settings */
-    background-image: url('./2022112613263600-02CB906EA538A35643C1E1484C4B947D.jpg');
+    background-image: url('./BG1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -17,15 +17,15 @@ body {
 }
 
 .switch {
-    width: 1600px;
+    width: 1400px;
     display: grid;
-    grid-template-columns: 200px 1200px 200px;
+    grid-template-columns: 150px 900px 150px;
 }
 
 
 /* ////////////// screen /////////////// */
 .switch-middle {
-    height: 800px;
+    height: 700px;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -33,11 +33,11 @@ body {
     align-items: center;
 }
 .screen {
-    height: 650px;
-    width: 1000px;
+    height: 500px;
+    width: 700px;
     display: grid;
     grid-template-rows: [row1-start] 20%;
-    grid-template-columns: 500px 500px;
+    grid-template-columns: 350px 350px;
     align-items: center;
 
     border: solid rgb(72, 70, 70) 45px;
@@ -57,8 +57,8 @@ form {
 
 
 .screen-img {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     background-color: rgb(246, 229, 184);
     grid-column: 1/2;
     align-self: center;
@@ -71,8 +71,8 @@ img {
 }
 
 .screen-txt {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     background-color: rgb(246, 229, 184);
     grid-column: 2/3;
     font-size: 24pt;
@@ -92,8 +92,8 @@ img {
 
 /* ////////////// left and right controls/////////////// */
 .switch-left {
-    height: 800px;
-    width: 200px;
+    height: 700px;
+    width: 150px;
     background-image: radial-gradient(rgb(8, 182, 205), rgb(19, 146, 184));
     border-radius: 100px 0 0 100px;
 
@@ -103,8 +103,8 @@ img {
 ;
 }
 .switch-right {
-    height: 800px;
-    width: 200px;
+    height: 700px;
+    width: 150px;
     background-image: radial-gradient(rgb(255, 42, 0), rgb(207, 5, 5));
     border-radius: 0 100px 100px 0;
 
