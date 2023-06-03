@@ -2,10 +2,10 @@ const $body = $('body')
 console.log($body)
 
 
-
- 
+// assign title to search box
 const $searchForm = $('form')
  
+// once "Go!" or "Enter" is pushed, this will happen...
 $searchForm.on('submit', event => {
         
         // prevents refreshign of page after search
@@ -19,9 +19,9 @@ $searchForm.on('submit', event => {
         const $result = $('.screen-txt');
         const $imgError = (`<img src="./giphy.gif">`)
         
-        
+        // Pull information from API url with searched insects name
         const url = (`https://acnhapi.com/v1/bugs/` + bug)
-        console.log(url)
+        // console.log(url)
 
 
          // Loading notification
@@ -32,6 +32,7 @@ $searchForm.on('submit', event => {
         $.ajax(url)
                 .then((data) =>  {
                         console.log(data)
+                        // divs for lines of results displayed in text screen
                         $result.html(`
                         <!-- notes: square brackets for special character naming--!>
                         <div class="result">
@@ -47,23 +48,20 @@ $searchForm.on('submit', event => {
                                 <b>Rarity:&nbsp;</b>${data.availability.rarity}  
                         </div>
                         <div class="result">
-                                <b>Price:&nbsp;</b>${data.price}
+                                <b>Price:&nbsp;</b>$${data.price}
                         </div>
                         `)
-
+                        // API image pulled from array to display in image screen
                         $imgScreen.html(`<img src=${data.image_uri} alt=${data.name}>`)
 
                 })
                 // catch typos with an error message
                 .catch(() => {
-                        $result.html(`<div> Sorry, no insect on file</div>`)
+                        $result.html(`<div> Sorry, no insect on file</div>`);
+                        // display error image
                         $imgScreen.html($imgError)
                 })
                 
-
-        
-     
- 
 })
 
 
