@@ -28,6 +28,7 @@ $searchForm.on('submit', event => {
                 .then((data) =>  {
                         console.log(data)
                         $result.html(`
+                        <!-- notes: square brackets for special character naming--!>
                         <div class="result">
                                 <b>Name:&nbsp;</b>${data['file-name']}
                         </div>
@@ -42,10 +43,6 @@ $searchForm.on('submit', event => {
                         </div>
                         <div class="result">
                                 <b>Price:&nbsp;</b>${data.price}
-                        </div>
-                        <div class="result">
-                                <!-- notes: square brackets for special character naming--!>
-                                <b>Phrase:&nbsp;</b>${data['catch-phrase']}
                         </div>
                         `)
 
