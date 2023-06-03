@@ -112,6 +112,7 @@ img {
     padding-top: 10pt;
     flex: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
 }

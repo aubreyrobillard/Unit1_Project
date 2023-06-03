@@ -10,19 +10,24 @@ $searchForm.on('submit', event => {
         
         // prevents refreshign of page after search
         event.preventDefault()
+
         
         //defined variables
         const formData = new FormData(event.target);
         const bug = formData.get('bug').toLowerCase();
         const $imgScreen = $('.screen-img');
         const $result = $('.screen-txt');
+        const $imgError = (`<img src="./giphy.gif">`)
         
         
         const url = (`https://acnhapi.com/v1/bugs/` + bug)
         console.log(url)
 
 
-        
+         // Loading notification
+        $imgScreen.empty();
+        $(`[name="bug"]`)[0].value = "";
+        $result.html(`<div>Searching for Critters...</div>`);
 
         $.ajax(url)
                 .then((data) =>  {
@@ -47,6 +52,12 @@ $searchForm.on('submit', event => {
                         `)
 
                         $imgScreen.html(`<img src=${data.image_uri} alt=${data.name}>`)
+
+                })
+                // catch typos with an error message
+                .catch(() => {
+                        $result.html(`<div> Sorry, no insect on file</div>`)
+                        $imgScreen.html($imgError)
                 })
                 
 
