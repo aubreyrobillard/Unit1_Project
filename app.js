@@ -20,7 +20,7 @@ $searchForm.on('submit', event => {
         const $imgError = (`<img src="./giphy.gif">`)
         
         // Pull information from API url with searched insects name
-        const url = (`https://acnhapi.com/v1/bugs/` + bug)
+        const url = (`https://api.nookipedia.com/nh/bugs/` + bug)
         // console.log(url)
 
 
@@ -36,19 +36,19 @@ $searchForm.on('submit', event => {
                         $result.html(`
                         <!-- notes: square brackets for special character naming--!>
                         <div class="result">
-                                <b>Name:&nbsp;</b>${data['file-name']}
+                                <b>Name:&nbsp;</b>${data.name}
                         </div>
                         <div class="result">
-                                <b>ID:&nbsp;</b>${data.id}
+                                <b>ID:&nbsp;</b>${data.number}
                         </div>
                         <div class="result">
-                                <b>Location:&nbsp;</b>${data.availability.location}
+                                <b>Location:&nbsp;</b>${data.location}
                         </div>
                         <div class="result">
-                                <b>Rarity:&nbsp;</b>${data.availability.rarity}  
+                                <b>Rarity:&nbsp;</b>${data.rarity}  
                         </div>
                         <div class="result">
-                                <b>Price:&nbsp;</b>$${data.price}
+                                <b>Price:&nbsp;</b>$${data[sell_nook]}
                         </div>
                         `)
                         // API image pulled from array to display in image screen

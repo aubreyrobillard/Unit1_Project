@@ -278,7 +278,8 @@ img {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        overflow-y: auto;
+        /* this my fav */
+        overflow-y: auto;                           
     }
    .screen-img, .screen-txt{
         margin: 10pt;
