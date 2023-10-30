@@ -1,6 +1,8 @@
 const $body = $('body')
 console.log($body)
 
+const APIKey = env.config(APIKey)
+
 
 // assign title to search box
 const $searchForm = $('form')
@@ -20,7 +22,7 @@ $searchForm.on('submit', event => {
         const $imgError = (`<img src="./giphy.gif">`)
         
         // Pull information from API url with searched insects name
-        const url = (`https://api.nookipedia.com/nh/bugs/` + bug)
+        const url = (`https://api.nookipedia.com/nh/bugs/` + bug + `?UUID=` + APIKey)
         // console.log(url)
 
 
